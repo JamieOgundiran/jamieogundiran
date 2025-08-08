@@ -1,18 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const chatHistory = document.getElementById('chat-history');
   const userInput = document.getElementById('user-input');
-  const sendButton = document.getElementById('send-button');
-  const ownerNameElement = document.getElementById('owner-name');
+  const sendButton = document.getElementById('send-button');  
   
-  // Fetch owner name
-  //fetch('/api/info')
-  //    .then(response => response.json())
-  //    .then(data => {
-  //        ownerNameElement.textContent = data.name || 'the portfolio owner';
-  //    })
-      //.catch(error => console.error('Error fetching portfolio owner info:', //error));
-  
-  // Function to add messages to the chat
   function addMessage(content, isUser) {
       const messageElement = document.createElement('div');
       messageElement.classList.add('message');
@@ -20,11 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
       messageElement.textContent = content;
       chatHistory.appendChild(messageElement);
       
-      // Scroll to the bottom
       chatHistory.scrollTop = chatHistory.scrollHeight;
   }
   
-  // Function to send user query to the API
   function sendQuery(query) {
       fetch('/api/query', {
           method: 'POST',
@@ -43,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
   
-  // Handle send button click
   sendButton.addEventListener('click', function() {
       const query = userInput.value.trim();
       if (query.length === 0) return;
@@ -53,14 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
       sendQuery(query);
   });
   
-  // Handle Enter key press
   userInput.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
           sendButton.click();
       }
   });
   
-  // Add welcome message
   addMessage('Hello. Ask me anything about Jamie.', false);
 });
 

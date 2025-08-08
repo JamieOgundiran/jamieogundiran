@@ -5,18 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const modalBody = document.getElementById('modal-body');
   const closeModal = document.querySelector('.close-modal');
   
-  // Filter projects
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
-      // Remove active class from all buttons
       filterButtons.forEach(btn => btn.classList.remove('active'));
       
-      // Add active class to clicked button
       this.classList.add('active');
       
       const filter = this.getAttribute('data-filter');
       
-      // Show/hide projects based on filter
       const projectCards = document.querySelectorAll('.project-card');
       
       projectCards.forEach(card => {
@@ -29,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Handle project detail view
   document.addEventListener('click', function(e) {
     if (e.target.classList.contains('view-details')) {
       e.preventDefault();
@@ -38,13 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Open project modal
   function openProjectModal(projectId) {
-    // Fetch project details from API
     fetch(`/api/project/${projectId}`)
       .then(response => response.json())
       .then(data => {
-        // Populate modal with project details
         modalBody.innerHTML = `
           <div class="project-detail">
             <div class="project-detail-header">
@@ -81,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         `;
         
-        // Show modal
         modal.style.display = 'block';
       })
       .catch(error => {
@@ -91,19 +82,16 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
   
-  // Close modal
   closeModal.addEventListener('click', function() {
     modal.style.display = 'none';
   });
   
-  // Close modal when clicking outside of it
   window.addEventListener('click', function(e) {
     if (e.target === modal) {
       modal.style.display = 'none';
     }
   });
   
-  // Load projects from API (or can be static if preferred)
   function loadProjects() {
     fetch('/api/projects')
       .then(response => response.json())
@@ -145,6 +133,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }
 
-// Initialize the page
 loadProjects();
 });
