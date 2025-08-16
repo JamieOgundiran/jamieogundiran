@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/projects.css">
@@ -71,65 +71,64 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           </div>
     </div>
     <div class = "content-wrapper">   
-        <section class="research-section fade-in">
-            <h1> <span class = "orange-highlight">RECENT</span> <br>RESEARCH</h1>
-            <div class="experience-list" id="research-list">
-                <!-- Research will be loaded dynamically from JSON -->
+        <section class="blog-section fade-in">
+            <h1> <span class = "orange-highlight">RECENT</span> <br>BLOG POSTS</h1>
+            <div class="blog-container" id="blog-posts-container">
             </div>
         </section>
-          <section class="contact-section">
-            <h1><span class="orange-highlight">LET'S</span><br>CONNECT</h1>
-            <form action="https://formsubmit.co/Jamieogundiran@gmail.com" method="POST" class="contact-form fade-in">
-              <!-- Protect from bots -->
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">  <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-            </div>
-
+        <section class="contact-section">
+          <h1><span class="orange-highlight">LET'S</span><br>CONNECT</h1>
+          <form action="https://formsubmit.co/Jamieogundiran@gmail.com" method="POST" class="contact-form fade-in">
+            <!-- Protect from bots -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">  <div class="form-row">
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Type your message here…"
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
                 required
-              ></textarea>
+              />
             </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+          </div>
 
-            <button type="submit" class="submit-button">Send Message</button>
-          </form>
-          </section>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Type your message here…"
+              required
+            ></textarea>
           </div>
-          </div>
+
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+        </section>
+</div>
+</div>
 
     <div id="footer-container"></div>
 
     <script src="js/app.js"></script>
     <script src="js/navigation.js"></script>
-    <script src="js/data-loader.js"></script>
+    <script type="module" src="js/data-loader.js"></script>
     <script>
-        // Initialize dynamic content loading for research page
-        document.addEventListener('DOMContentLoaded', function() {
-            portfolioLoader.initResearchPage();
+        // Initialize blog page
+        document.addEventListener('DOMContentLoaded', () => {
+            window.portfolioLoader.initBlogPage();
         });
     </script>
 </body>

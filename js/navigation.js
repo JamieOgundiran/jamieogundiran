@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(response => response.text())
       .then(data => {
         headerContainer.innerHTML = data;
-        highlightCurrentPage();
+        initNavigation();
       })
       .catch(error => console.error('Error loading header:', error));
+  } else {
+    // Initialize navigation if header is already in the DOM
+    initNavigation();
   }
 
   if (footerContainer) {
@@ -25,12 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(error => console.error('Error loading footer:', error));
   }
 
-  function highlightCurrentPage() {
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.main-nav a');
+  function initNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
 
+    // Find and mark the current page
+    const currentPath = window.location.pathname;
     navLinks.forEach(link => {
-      if (currentPath.endsWith(link.getAttribute('href'))) {
+      const href = link.getAttribute('href');
+      if (currentPath.endsWith(href) || (currentPath === '/' && href === 'index.html')) {
         link.classList.add('active');
       }
     });

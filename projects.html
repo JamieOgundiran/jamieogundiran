@@ -7,9 +7,22 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/background.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">   
 </head>
-  <!-- in your <head>, if you haven’t already -->
+<body>
+  <!-- Animated Background -->
+  <div class="animated-background">
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="wave-pattern"></div>
+    <div class="mesh-overlay"></div>
+  </div>
+
+  <!-- in your <head>, if you haven't already -->
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -19,28 +32,19 @@
     <nav class="main-nav">
       <ul>
         <li>
-          <a href="index.html" class="nav-icon">
-            <i class="fa-solid fa-house"></i>
-            <span class="nav-label">Home</span>
-          </a>
+          <a href="index.html" class="nav-link">Home</a>
         </li>
         <li>
-          <a href="projects.html" class="nav-icon">
-            <i class="fa-solid fa-diagram-project"></i>
-            <span class="nav-label">Projects</span>
-          </a>
+          <a href="projects.html" class="nav-link">Projects</a>
         </li>
         <li>
-          <a href="research.html" class="nav-icon">
-            <i class="fa-solid fa-book"></i>
-            <span class="nav-label">Research</span>
-          </a>
+          <a href="research.html" class="nav-link">Research</a>
         </li>
         <li>
-          <a href="achievements.html" class="nav-icon">
-            <i class="fa-solid fa-trophy"></i>
-            <span class="nav-label">Achievements</span>
-          </a>
+          <a href="achievements.html" class="nav-link">Achievements</a>
+        </li>
+        <li>
+          <a href="blog.html" class="nav-link">Blog</a>
         </li>
       </ul>
     </nav>
@@ -51,13 +55,13 @@
             <div class="profile">
                 <img src="images/jamieo.png" alt="Jamie Ogundiran" class="sidebar-image">
                 <h2 class="sidebar-name">Jamie Ogundiran</h2>
-                <p class="profile-bio">Building Artificial Intelligent systems with human-centered design
+                <p class="profile-bio">Technical Staff @ ACI.dev
                 </p>
                 <div class="social-media-container">
-                    <a href="https://linkedin.com/in/yourprofile" class="social-icon" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/jamie-ogundiran-874aa3230/" class="social-icon" aria-label="LinkedIn">
                       <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/yourusername" class="social-icon" aria-label="GitHub">
+                    <a href="https://github.com/JamieOgundiran" class="social-icon" aria-label="GitHub">
                       <i class="fab fa-github"></i>
                     </a>
                     <a href="mailto:jamieogundiran@gmail.com" class="social-icon" aria-label="Email">
@@ -71,87 +75,7 @@
             <section class="projects-section fade-in">
                 <h1> <span class = "orange-highlight">RECENT</span> <br>PROJECTS</h1>
                 <div class="projects-grid" id="projects-grid">
-                    <div class="project-card" data-category="ai">
-                        <div class="project-image">
-                            <img src="images/table42.jpeg" alt="Portfolio Chatbot">
-                        </div>
-                        <div class="project-content">
-                            <h3 class = "project-heading">Table 42</h3>
-                            <p>AI-Powered Customer Service & CRM Platform for Restaurants and Cafes</p>
-                            <div class="project-links">
-                                <a href="https://github.com/JReal10/Table42" target="_blank" class="project-link">View Details</a>
-                                <!--<a href="#" class="project-link view-details" data-project-id="portfolio-chatbot">View Details</a>-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="ai">
-                        <div class="project-image">
-                            <img src="images/sntc.jpeg" alt="Say NO TO CORRUPTION">
-                        </div>
-                        <div class="project-content">
-                            <h3 class = "project-heading" >SNTC</h3>
-                            <p>AI-powered compliance monitoring and supplier intelligence</p>
-                            <div class="project-links">
-                                <a href="https://github.com/JReal10/say_no_to_corruption" target="_blank" class="project-link">View Details</a>
-                                <!--<a href="#" class="project-link view-details" data-project-id="portfolio-chatbot">View Details</a>-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="ai">
-                        <div class="project-image">
-                            <img src="images/sentiment.jpg" alt="Reddit Stock Sentiment Analyzer">
-                        </div>
-                        <div class="project-content">
-                            <h3 class = "project-heading">RedditRadar</h3>
-                            <p>Reddit stock discussions sentiment analyzer for financial institution</p>
-                            <div class="project-links">
-                                <a href="https://github.com/JReal10/Reddit-Stock-Sentiment-Analyzer" target="_blank" class="project-link">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card" data-category="web">
-                        <div class="project-image">
-                            <img src="images/house.png" alt="London Borough Recommender">
-                        </div>
-                        <div class="project-content">
-                            <h3 class = "project-heading">BoroughMatch London</h3>
-                            <p>AI-powered London Borough Recommender for optimizing resident experience and local service access.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/JReal10/London-Area-Recommender-System" target="_blank" class="project-link">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="project-card" data-category="web">
-                        <div class="project-image">
-                            <img src="images/sharon.png" alt="E-commerce Platform">
-                        </div>
-                        <div class="project-content">
-                            <h3 class = "project-heading">Sharon</h3>
-                            <p>A mobile application for salon appointment booking, featuring real-time scheduling and salon dashboards</p>
-                            <div class="project-links">
-                                <a href="https://github.com/JReal10/Sharon---Salon-booking-app" target="_blank" class="project-link">View Details</a>
-                                <!--<a href="#" class="project-link view-details" data-project-id="ecommerce-platform">View Details</a>-->
-                            </div>
-                        </div>
-                    </div>
-        
-                    
-                    <div class="project-card" data-category="web">
-                        <div class="project-image">
-                            <img src="images/parenting.png" alt="E-commerce Platform">
-                        </div>
-                        <div class="project-content">
-                            <h3 class = "project-heading">ParentLink</h3>
-                            <p>parenting app focusing on partner engagement, community building, and expert-backed guidance for all developmental stages.</p>
-                            <div class="project-links">
-                                <a href="https://www.figma.com/community/file/1322990644569239714" target="_blank" class="project-link">View Details</a>
-                                <!--<a href="#" class="project-link view-details" data-project-id="ecommerce-platform">View Details</a>-->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- You can add additional project cards here -->
+                    <!-- Projects will be loaded dynamically from JSON -->
                 </div>
             </section>
             <section class="contact-section">
@@ -202,5 +126,12 @@
     
         <script src="js/app.js"></script>
         <script src="js/navigation.js"></script>
+        <script src="js/data-loader.js"></script>
+        <script>
+            // Initialize dynamic content loading for projects page
+            document.addEventListener('DOMContentLoaded', function() {
+                portfolioLoader.initProjectsPage();
+            });
+        </script>
     </body>
 </html>

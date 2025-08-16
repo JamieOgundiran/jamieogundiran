@@ -1,0 +1,233 @@
+/**
+ * Animated Gradient Background with Random Moving Patterns
+ */
+
+/* Main animated gradient background */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #151515 25%,
+    #1f1f1f 50%,
+    #151515 75%,
+    #0a0a0a 100%
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 45s linear infinite;
+}
+
+/* Primary gradient animation - much slower */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Sharp geometric shapes */
+.gradient-orb {
+  position: absolute;
+  border-radius: 0;
+  filter: blur(25px);
+  opacity: 0.15;
+  animation: geometricFloat 60s linear infinite;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+.gradient-orb:nth-child(1) {
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(45deg, rgba(85, 85, 85, 0.2), rgba(68, 68, 68, 0.1));
+  top: 15%;
+  left: 5%;
+  animation-delay: 0s;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+}
+
+.gradient-orb:nth-child(2) {
+  width: 300px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(102, 102, 102, 0.15), rgba(85, 85, 85, 0.1));
+  top: 45%;
+  right: 10%;
+  animation-delay: -20s;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.gradient-orb:nth-child(3) {
+  width: 350px;
+  height: 180px;
+  background: linear-gradient(225deg, rgba(76, 76, 76, 0.18), rgba(68, 68, 68, 0.08));
+  bottom: 25%;
+  left: 20%;
+  animation-delay: -40s;
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
+}
+
+.gradient-orb:nth-child(4) {
+  width: 250px;
+  height: 120px;
+  background: linear-gradient(315deg, rgba(85, 85, 85, 0.12), rgba(102, 102, 102, 0.08));
+  top: 25%;
+  right: 35%;
+  animation-delay: -30s;
+  clip-path: polygon(0 20%, 60% 20%, 60% 0, 100% 50%, 60% 100%, 60% 80%, 0 80%);
+}
+
+.gradient-orb:nth-child(5) {
+  width: 320px;
+  height: 160px;
+  background: linear-gradient(180deg, rgba(68, 68, 68, 0.14), rgba(85, 85, 85, 0.06));
+  bottom: 35%;
+  right: 5%;
+  animation-delay: -50s;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+/* Slow geometric floating animation */
+@keyframes geometricFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scaleX(1);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px) rotate(2deg) scaleX(1.05);
+  }
+  50% {
+    transform: translateY(-25px) translateX(-8px) rotate(-1deg) scaleX(0.95);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-15px) rotate(1deg) scaleX(1.02);
+  }
+}
+
+/* Minimalistic geometric pattern */
+.wave-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(85, 85, 85, 0.03) 49%, rgba(85, 85, 85, 0.03) 51%, transparent 52%),
+    linear-gradient(135deg, transparent 48%, rgba(68, 68, 68, 0.02) 49%, rgba(68, 68, 68, 0.02) 51%, transparent 52%);
+  background-size: 120px 120px, 180px 180px;
+  animation: geometricMove 80s linear infinite;
+}
+
+@keyframes geometricMove {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(-120px) translateY(-180px);
+    opacity: 0.4;
+  }
+}
+
+/* Subtle mesh overlay */
+.mesh-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(0deg, transparent 70%, rgba(85, 85, 85, 0.02) 100%),
+    linear-gradient(90deg, transparent 70%, rgba(68, 68, 68, 0.015) 100%);
+  background-size: 100px 100px;
+  animation: meshShift 100s linear infinite;
+}
+
+@keyframes meshShift {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-100px) translateY(-100px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gradient-orb {
+    filter: blur(20px);
+    opacity: 0.1;
+  }
+  
+  .gradient-orb:nth-child(1) {
+    width: 250px;
+    height: 120px;
+  }
+  
+  .gradient-orb:nth-child(2) {
+    width: 200px;
+    height: 100px;
+  }
+  
+  .gradient-orb:nth-child(3) {
+    width: 220px;
+    height: 110px;
+  }
+  
+  .gradient-orb:nth-child(4) {
+    width: 180px;
+    height: 90px;
+  }
+  
+  .gradient-orb:nth-child(5) {
+    width: 200px;
+    height: 100px;
+  }
+  
+  .wave-pattern {
+    background-size: 80px 80px, 120px 120px;
+  }
+  
+  .mesh-overlay {
+    background-size: 60px 60px;
+  }
+}
+
+/* Performance optimization */
+.animated-background,
+.gradient-orb,
+.wave-pattern,
+.mesh-overlay {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animated-background {
+    animation-duration: 120s;
+  }
+  
+  .gradient-orb {
+    animation-duration: 180s;
+  }
+  
+  .wave-pattern,
+  .mesh-overlay {
+    animation-duration: 200s;
+  }
+}

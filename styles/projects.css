@@ -71,49 +71,80 @@
 
 /* Project Card */
 .project-card {
-  background-color: var(--bg-color);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-image {
-  height: 200px;
+  height: 240px;
   overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.project-card:hover .project-image {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px);
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+.project-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.project-card:hover .project-image::after {
+  opacity: 1;
 }
 
 .project-content {
-  padding: 1.5rem;
+  padding: 1.2rem 0.5rem 0 0.5rem;
+  background: transparent;
 }
 
 .project-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--color-primary-text);
 }
 
 .project-content p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  color: var(--color-secondary-text);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.project-card:hover .project-content h3 {
+  color: var(--color-primary-text);
+}
+
+.project-card:hover .project-content p {
+  color: var(--color-secondary-text);
 }
 
 /* Tech Stack Tags */
@@ -137,27 +168,7 @@
   font-weight: 500;
 }
 
-/* Project Links */
-.project-links {
-  display: flex;
-  gap: 1rem;
-}
 
-.project-link {
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.project-link:hover {
-  background-color: var(--color-rich-black); /* Slightly lighter dark on hover */
-  color: var(--color-white); /* White text for high contrast */
-}
 
 /* Modal Styles */
 .modal {
@@ -189,7 +200,7 @@
   right: 1.5rem;
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--text-secondary);
+  color: var(--color-secondary-text);
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -217,7 +228,7 @@
 
 .project-details-subtitle {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--color-secondary-text);
   margin-bottom: 1.5rem;
 }
 

@@ -1,0 +1,199 @@
+{
+  "personalProjects": [
+    {
+      "id": "table42",
+      "title": "Table 42",
+      "description": "AI-Powered Customer Service & CRM Platform for Restaurants and Cafes",
+      "category": "ai",
+      "image": "images/table42.jpeg",
+      "imageAlt": "Portfolio Chatbot",
+      "githubUrl": "https://github.com/JReal10/Table42",
+      "technologies": ["AI", "CRM", "Customer Service", "Restaurant Tech"],
+      "featured": true,
+      "dateCreated": "2024-03-01",
+      "status": "completed"
+    },
+    {
+      "id": "sntc",
+      "title": "SNTC",
+      "description": "AI-powered compliance monitoring and supplier intelligence",
+      "category": "ai",
+      "image": "images/sntc.jpeg",
+      "imageAlt": "Say NO TO CORRUPTION",
+      "githubUrl": "https://github.com/JReal10/say_no_to_corruption",
+      "technologies": ["AI", "Compliance", "Risk Assessment", "NLP"],
+      "featured": true,
+      "dateCreated": "2024-04-01",
+      "status": "completed"
+    },
+    {
+      "id": "reddit-radar",
+      "title": "RedditRadar",
+      "description": "Reddit stock discussions sentiment analyzer for financial institution",
+      "category": "ai",
+      "image": "images/sentiment.jpg",
+      "imageAlt": "Reddit Stock Sentiment Analyzer",
+      "githubUrl": "https://github.com/JReal10/Reddit-Stock-Sentiment-Analyzer",
+      "technologies": ["NLP", "Sentiment Analysis", "Finance", "Reddit API"],
+      "featured": true,
+      "dateCreated": "2024-02-01",
+      "status": "completed"
+    },
+    {
+      "id": "borough-match",
+      "title": "BoroughMatch London",
+      "description": "AI-powered London Borough Recommender for optimizing resident experience and local service access.",
+      "category": "web",
+      "image": "images/house.png",
+      "imageAlt": "London Borough Recommender",
+      "githubUrl": "https://github.com/JReal10/London-Area-Recommender-System",
+      "technologies": ["AI", "Recommendation System", "Location Intelligence", "Data Analysis"],
+      "featured": true,
+      "dateCreated": "2024-01-01",
+      "status": "completed"
+    },
+    {
+      "id": "sharon",
+      "title": "Sharon",
+      "description": "A mobile application for salon appointment booking, featuring real-time scheduling and salon dashboards",
+      "category": "web",
+      "image": "images/sharon.png",
+      "imageAlt": "E-commerce Platform",
+      "githubUrl": "https://github.com/JReal10/Sharon---Salon-booking-app",
+      "technologies": ["Mobile App", "Scheduling", "Real-time", "Dashboard"],
+      "featured": true,
+      "dateCreated": "2023-12-01",
+      "status": "completed"
+    },
+    {
+      "id": "parent-link",
+      "title": "ParentLink",
+      "description": "parenting app focusing on partner engagement, community building, and expert-backed guidance for all developmental stages.",
+      "category": "web",
+      "image": "images/parenting.png",
+      "imageAlt": "E-commerce Platform",
+      "githubUrl": "https://www.figma.com/community/file/1322990644569239714",
+      "technologies": ["UI/UX Design", "Parenting", "Community", "Mobile Design"],
+      "featured": true,
+      "dateCreated": "2023-11-01",
+      "status": "completed"
+    }
+  ],
+  "recentResearch": [
+    {
+      "id": "africa-llm",
+      "title": "Low-Resource African Languages and Cultures",
+      "description": "This research focuses on improving culturally aligned Large Language Models (LLMs) for low-resource African languages. The goal is to develop scalable data collection methods and create benchmarks for better model evaluation.",
+      "category": "nlp",
+      "githubUrl": "https://github.com/JReal10/AfricaLLM",
+      "startDate": "2024-01-01",
+      "endDate": "present",
+      "status": "ongoing",
+      "technologies": ["LLM", "NLP", "African Languages", "Cultural AI", "Benchmarking"],
+      "collaborators": [],
+      "publications": [],
+      "featured": true
+    }
+  ],
+  "recentAchievements": [
+    {
+      "id": "tahakom-developer-day-speaker",
+      "title": "Speaker – TAHAKOM Developer Day, Riyadh",
+      "description": "Presented on Model Context Protocol (MCP), exploring its challenges like prompt injection and context expansion and showcasing how ACI.dev is tackling them head-on. Shared work with the brilliant AI talent in Saudi Arabia and contributed to their flourishing AI ecosystem.",
+      "category": "conference",
+      "date": "2025-08-01",
+      "period": "August 2025",
+      "linkedinUrl": "https://www.linkedin.com/posts/jamie-ogundiran-874aa3230_%F0%9D%97%AA%F0%9D%97%B5%F0%9D%97%AE%F0%9D%98%81-%F0%9D%97%AE-%F0%9D%97%B1%F0%9D%97%AE%F0%9D%98%86-%F0%9D%97%B6%F0%9D%97%BB-%F0%9D%97%A5%F0%9D%97%B6%F0%9D%98%86%F0%9D%97%AE%F0%9D%97%B1%F0%9D%97%B5-im-activity-7357101257544593409-dxD1",
+      "projectRelated": null,
+      "rank": null,
+      "totalParticipants": null,
+      "technologies": ["Model Context Protocol", "MCP", "AI Security", "Prompt Injection", "Context Expansion"],
+      "featured": true,
+      "collaborators": ["Opemipo Disu", "Parth Sharma"],
+      "organization": "TAHAKOM",
+      "location": "Riyadh, Saudi Arabia"
+    },
+    {
+      "id": "sf-tech-week-speaker",
+      "title": "Speaker – San Francisco Tech Week Immersion",
+      "description": "Spent a week immersed in the San Francisco tech scene, presenting at Hack Night hosted by Weaviate on how ACI.dev is transforming the tool-calling space for AI agents. Also attended engineering night hosted by Dust and participated in windsurf build night by AI collective, experiencing rapid tech adoption and the culture of building in SF.",
+      "category": "conference",
+      "date": "2025-07-01",
+      "period": "July 2025",
+      "linkedinUrl": "https://www.linkedin.com/posts/jamie-ogundiran-874aa3230_recently-i-spent-a-week-immersed-in-the-san-activity-7353121750525583360-2bpV",
+      "projectRelated": null,
+      "rank": null,
+      "totalParticipants": null,
+      "technologies": ["AI Agents", "Tool-calling", "ACI.dev", "AI Workflows", "Startup Ecosystem"],
+      "featured": true,
+      "collaborators": [],
+      "organization": "Weaviate, Dust, AI Collective",
+      "location": "San Francisco, California",
+      "events": ["Weaviate Hack Night", "Dust Engineering Night", "AI Collective Windsurf Build Night"],
+      "insights": ["Rapid Tech Adoption across sectors", "Culture of Building in SF ecosystem"]
+    },
+    {
+      "id": "ai-agent-hackathon",
+      "title": "2nd Place – Europe's Largest AI Agent Hackathon",
+      "description": "Built Table 42, an AI-powered restaurant concierge that converts social media engagement into real bookings by integrating with social platforms and personalizing the discovery-to-reservation journey.",
+      "category": "hackathon",
+      "date": "2025-04-01",
+      "period": "March 2025 - April 2025",
+      "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7324704340596715520/",
+      "projectRelated": "table42",
+      "rank": 2,
+      "totalParticipants": null,
+      "technologies": ["AI", "Social Media Integration", "Restaurant Tech"],
+      "featured": true
+    },
+    {
+      "id": "portia-ai-track",
+      "title": "3rd Place – Portia AI Track, Encode AI London Hackathon",
+      "description": "Developed SNTC (Say NO TO CORRUPTION), an AI-Powered risk assessment tool. The system identifies corruption risks through political exposure screening, sanctions checks, adverse media analysis, and jurisdictional risk evaluation.",
+      "category": "hackathon",
+      "date": "2025-04-01",
+      "period": "April 2025",
+      "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7317505996032020484/",
+      "projectRelated": "sntc",
+      "rank": 3,
+      "totalParticipants": null,
+      "technologies": ["AI", "Risk Assessment", "Compliance", "NLP"],
+      "featured": true
+    },
+    {
+      "id": "hacklbs-winner",
+      "title": "Winner – HackLBS 2025, London Business School",
+      "description": "Created Gastronaut, a conversational AI audio bot with automated table management to address manual reservation inefficiencies in Southeast Asian restaurants. The solution modernizes bookings, reduces human error, and enhances customer experience.",
+      "category": "hackathon",
+      "date": "2025-03-01",
+      "period": "March 2025",
+      "linkedinUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7302631978154033152/",
+      "projectRelated": null,
+      "rank": 1,
+      "totalParticipants": null,
+      "technologies": ["Conversational AI", "Audio Processing", "Restaurant Tech", "Automation"],
+      "featured": true
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "building-culturally-aware-ai",
+      "title": "Building Culturally Aware AI: Lessons from African Language Models",
+      "excerpt": "My research journey into developing AI systems that understand and respect cultural nuances, particularly for low-resource African languages.",
+      "content": "Working on culturally aligned Large Language Models for African languages has been one of the most challenging and rewarding aspects of my research. The conventional approach to AI development often overlooks the rich linguistic and cultural diversity that exists beyond Western contexts.\n\nThrough my research, I've discovered that building truly inclusive AI requires more than just translation. It demands a deep understanding of cultural context, social norms, and the unique ways different communities express ideas and emotions.\n\nOne of the key challenges we face is the scarcity of high-quality training data for low-resource languages. This isn't just a technical problem—it's a representation problem. When AI systems are trained predominantly on Western content, they inevitably reflect Western perspectives and biases.\n\nOur approach focuses on developing scalable data collection methods that respect local communities and their intellectual property. We're not just extracting data; we're building partnerships with local linguists, educators, and community leaders.\n\nThe goal isn't to replace existing languages with AI-generated content, but to create tools that help preserve, celebrate, and promote linguistic diversity in our increasingly digital world.",
+      "author": "Jamie Ogundiran",
+      "publishedDate": "2025-08-07",
+      "category": "Research",
+      "tags": ["Cultural AI", "African Languages", "NLP", "Research", "Diversity"],
+      "readTime": "7 min read",
+      "featured": true,
+      "status": "published"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2025-08-15",
+    "version": "1.2.0",
+    "dataSource": "portfolio-html-extraction-with-updates",
+    "author": "Jamie Ogundiran"
+  }
+}

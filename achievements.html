@@ -7,10 +7,22 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/background.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- in your <head>, if you haven’t already -->
+  <!-- Animated Background -->
+  <div class="animated-background">
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="wave-pattern"></div>
+    <div class="mesh-overlay"></div>
+  </div>
+
+  <!-- in your <head>, if you haven't already -->
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -20,28 +32,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 <nav class="main-nav">
   <ul>
     <li>
-      <a href="index.html" class="nav-icon">
-        <i class="fa-solid fa-house"></i>
-        <span class="nav-label">Home</span>
-      </a>
+      <a href="index.html" class="nav-link">Home</a>
     </li>
     <li>
-      <a href="projects.html" class="nav-icon">
-        <i class="fa-solid fa-diagram-project"></i>
-        <span class="nav-label">Projects</span>
-      </a>
+      <a href="projects.html" class="nav-link">Projects</a>
     </li>
     <li>
-      <a href="research.html" class="nav-icon">
-        <i class="fa-solid fa-book"></i>
-        <span class="nav-label">Research</span>
-      </a>
+      <a href="research.html" class="nav-link">Research</a>
     </li>
     <li>
-      <a href="achievements.html" class="nav-icon">
-        <i class="fa-solid fa-trophy"></i>
-        <span class="nav-label">Achievements</span>
-      </a>
+      <a href="achievements.html" class="nav-link">Achievements</a>
+    </li>
+    <li>
+      <a href="blog.html" class="nav-link">Blog</a>
     </li>
   </ul>
 </nav>
@@ -52,13 +55,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         <div class="profile">
             <img src="images/jamieo.png" alt="Jamie Ogundiran" class="sidebar-image">
             <h2 class="sidebar-name">Jamie Ogundiran</h2>
-            <p class="profile-bio">Building Artificial Intelligent systems with human-centered design
+            <p class="profile-bio">Technical Staff @ ACI.dev
             </p>
             <div class="social-media-container">
-                <a href="https://linkedin.com/in/yourprofile" class="social-icon" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/jamie-ogundiran-874aa3230/" class="social-icon" aria-label="LinkedIn">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/yourusername" class="social-icon" aria-label="GitHub">
+                <a href="https://github.com/JamieOgundiran" class="social-icon" aria-label="GitHub">
                   <i class="fab fa-github"></i>
                 </a>
                 <a href="mailto:jamieogundiran@gmail.com" class="social-icon" aria-label="Email">
@@ -72,42 +75,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
         <section class="achievements-section fade-in">
             <h1> <span class = "orange-highlight">RECENT</span> <br>ACHIEVEMENTS</h1>
-            <div class="experience-list">
-                <a class="experience-card" target="_blank" href = "https://www.linkedin.com/feed/update/urn:li:activity:7324704340596715520/">
-                    <div class="company">
-                      2nd Place – Europe’s Largest AI Agent Hackathon
-                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </div>
-                    <p class="description">Built Table 42, an AI-powered restaurant concierge that converts social media engagement into real bookings by integrating with social platforms and personalizing the discovery-to-reservation journey.</p>
-                    <p class="period">March 2025 - April 2025</p>
-                  </a>
-                
-                <a class="experience-card" target="_blank" href = "https://www.linkedin.com/feed/update/urn:li:activity:7317505996032020484/">
-                    <div class="company">
-                      3rd Place – Portia AI Track, Encode AI London Hackathon
-                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </div>
-                    <p class="description">Developed SNTC (Say NO TO CORRUPTION), an AI-Powered risk assessment tool. The system identifies corruption risks through political exposure screening, sanctions checks, adverse media analysis, and jurisdictional risk evaluation. </p>
-                    <p class="period">April 2025</p>
-                  </a>
-                
-                <a class="experience-card" target="_blank" href = "https://www.linkedin.com/feed/update/urn:li:activity:7302631978154033152/">
-                    <div class="company">
-                      Winner – HackLBS 2025, London Business School
-                      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </div>
-                    <p class="description">Created Gastronaut, a conversational AI audio bot with automated table management to address manual reservation inefficiencies in Southeast Asian restaurants. The solution modernizes bookings, reduces human error, and enhances customer experience.</p>
-                    <p class="period">March 2025</p>
-                  </a>
+            <div class="experience-list" id="achievements-list">
+                <!-- Achievements will be loaded dynamically from JSON -->
             </div>
         </section>
         <section class="contact-section">
@@ -158,5 +127,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
     <script src="js/app.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script>
+        // Initialize dynamic content loading for achievements page
+        document.addEventListener('DOMContentLoaded', function() {
+            portfolioLoader.initAchievementsPage();
+        });
+    </script>
 </body>
 </html>
