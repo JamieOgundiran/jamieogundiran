@@ -76,13 +76,14 @@ class PortfolioDataLoader {
       day: 'numeric' 
     });
 
-    // Generate a dummy image URL based on post category
+    // Pick a post-specific image when provided; otherwise fallback to a category image
     const dummyImage = this.getDummyImage(post.category);
+    const imageSrc = post.image || dummyImage;
 
     return `
       <a href="blog-post-${post.id}.html" class="blog-card" data-category="${post.category.toLowerCase().replace(' ', '-')}">
         <div class="blog-image">
-          <img src="${dummyImage}" alt="${post.title}" loading="lazy">
+          <img src="${imageSrc}" alt="${post.title}" loading="lazy">
         </div>
         <div class="blog-content">
           <div class="blog-meta">

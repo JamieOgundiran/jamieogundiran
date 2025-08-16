@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Culturally Aware AI: Lessons from African Language Models - Jamie Ogundiran</title>
+    <link rel="stylesheet" href="styles/blog-post.css">
+    <link rel="stylesheet" href="styles/background.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="animated-background">
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="gradient-orb"></div>
+    <div class="wave-pattern"></div>
+    <div class="mesh-overlay"></div>
+  </div>
+
+  <!-- in your <head>, if you haven't already -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<header class="site-header">
+<nav class="main-nav">
+  <ul>
+    <li>
+      <a href="index.html" class="nav-link">Home</a>
+    </li>
+    <li>
+      <a href="projects.html" class="nav-link">Projects</a>
+    </li>
+    <li>
+      <a href="research.html" class="nav-link">Research</a>
+    </li>
+    <li>
+      <a href="achievements.html" class="nav-link">Achievements</a>
+    </li>
+    <li>
+      <a href="blog.html" class="nav-link">Blog</a>
+    </li>
+  </ul>
+</nav>
+</header>
+
+    <div class="layout-container">
+        <div class="content-wrapper">   
+            <article class="blog-post-full fade-in">
+            <header class="blog-post-header">
+                <div class="blog-post-breadcrumb">
+                    <a href="blog.html" class="breadcrumb-link">← Back to Blog</a>
+                </div>
+                <div class="blog-post-hero">
+                    <img src="images/social-psychology.png" 
+                         alt="Culturally aligned LLMs for low-resource African languages" 
+                         class="blog-post-hero-image">
+                </div>
+                <div class="blog-post-meta">
+                    <span class="blog-post-category">Research</span>
+                    <div class="blog-post-info">
+                        <span class="blog-post-date">August 7, 2025</span>
+                        <span class="blog-post-read-time">7 min read</span>
+                    </div>
+                </div>
+                <h1 class="blog-post-title">AfricaLLM: Comprehensive Evaluation and Fine-tuning of Large Language Models for African Languages</h1>
+                <p class="blog-post-excerpt">Research on culturally aligned LLMs for low-resource African languages, leveraging value survey data to improve alignment and evaluation.</p>
+            </header>
+
+            <div class="blog-post-content">
+
+                <h2>The 98% Problem: Why Most of Africa is Left Behind in AI</h2>
+                <p>Over 2000 languages spoken across Africa, only about 42 receive any form of support in existing AI language models.</p>
+                <p>That means  98% of African languages are completley unsupported by the technology that's reshaping our world. This isn't just a technical oversight – it's a digital divide that's leaving entire communities behind in the AI revolution.</p>
+                <p>While English speakers benefit from AI assistants that understand context, culture, and nuance, African language speakers face AI systems that misunderstand their cultural values. This gap doesn't just limit access to technology; it actively perpetuates bias and misinformation while denying communities crucial economic and educational opportunities.</p>
+                
+                <h2>There's a urgent need for a novel finetuning technique for low resource African languages</h2>
+                <h3>The Cultural Context Crisis</h3>
+                <p>When AI systems are primarily trained on English data from Western contexts, they miss the nuanced ways different cultures think, reason, and communicate. For instance, the concept of family responsibility varies dramatically between Western individualistic societies and African communal cultures. An AI trained primarily on Western data might completely misunderstand why "making my parents proud" is a central life goal in many African cultures.</p>
+
+                <h3>The Current State of AI in African Languages</h3>
+                <p>Existing approaches to solve this problem fall into two categories, both with serious limitations:</p>
+                <p><strong>Prompting Techniques:</strong> Researchers try to use clever prompts to make AI systems think like specific cultures. While this sounds promising, it's like asking someone who only speaks English to suddenly understand Yoruba cultural nuances—the underlying knowledge just isn't there.</p>
+                <p><strong>Custom Training:</strong> Building AI models from scratch with more African data. This works but requires massive computational resources and datasets that often scarce for low-resource languages.</p>
+
+                <h3>What We Set Out to Discover</h3>
+                <p>Our research tackled a fundamental question: Can we efficiently teach existing AI models to understand and respect African cultural values without requiring massive resources? We focused on 17 African cultures and languages, including Hausa, Yoruba, Amharic, Swahili, Zulu, and many others.</p>
+
+                <h3>Our Novel Idea: Teaching AI to Think with Cultural Reasoning</h3>
+                <p>We started with the World Values Survey (WVS)—a massive international research program that has been studying human values across cultures since 1981. This survey covers 120 societies worldwide and tracks beliefs, values, and norms across social, political, economic, and religious dimensions. Think of it as a cultural DNA database for humanity.</p>
+                <p>From this rich dataset, we manually selected 122 questions covering topics like family values, work ethics, religious beliefs, and political views—areas where African and Western perspectives often differ significantly.</p>
+
+                <h3>Adding Cultural Reasoning to Outputs</h3>
+                <p>Previous approaches would take a question like "Do you agree that making your parents proud should be a main life goal?" and simply generate variations of the same question with an output like "1. agree" But that misses the WHY behind cultural responses.</p>
+                <p>Our new approach adds a reasoning layer that generates cultural explanations. For example, when an Ethiopian participant answers "very important" to family questions, our system generates reasoning like:</p>
+                <p>"In Ethiopian culture, family forms the bedrock of society, offering economic support, childcare, and social security through extensive family networks. It shapes one's identity, social status, and cultural values. Religious teachings underscore honoring family as a core obligation. The extended family system fosters mutual obligations and collective decision-making vital for survival and well-being."</p>
+                <img src="images/reasoning_layer.png" alt="Reasoning layer for culturally aligned LLM fine-tuning">
+
+                <h3>Our Technical Approach</h3>
+                <ul>
+                  <li>Data Collection: We sampled cultural values data from 17 African language communities across 9 countries</li>
+                  <li>Cultural Identity Prompting: We explicitly instructed AI models to think as citizens of specific countries speaking specific languages</li>
+                  <li>Semantic Augmentation: We generated thousands of culturally-grounded training examples from just 122 seed questions</li>
+                  <li>Efficient Fine-tuning: Using QLoRA (Quantized Low-Rank Adaptation), we fine-tuned five different language models without requiring massive computational resources</li>
+                </ul>
+                <img src="images/system_overview.png" alt="System overview of the data, prompting, augmentation, and fine-tuning pipeline">
+
+                <h3>4 Out of 5 Models Showed Improved Performance</h3>
+                <p>Our cultural fine-tuning approach delivered measurable improvements across multiple AI models:</p>
+                <ul>
+                  <li>Gemma-27B: +5.1% improvement (our biggest success story)</li>
+                  <li>Qwen-8B: +4.9% improvement</li>
+                  <li>Qwen-32B: +1.3% improvement</li>
+                  <li>Mistral-7B: +2.2% improvement</li>
+                  <li>Llama-8B: -1.8% (the one model that struggled)</li>
+                </ul>
+                <img src="images/performance_change.png" alt="Performance change across models after cultural fine-tuning">
+
+                <h3>Task-Specific Comparison: Reasoning vs No Reasoning</h3>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th>Finetuned_qwen_8B_noR</th>
+                      <th>Finetuned_Qwen_8B</th>
+                      <th>Difference</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>afriqa</td>
+                      <td>0.2140</td>
+                      <td>0.2029</td>
+                      <td>-0.0111</td>
+                    </tr>
+                    <tr>
+                      <td>afrisenti</td>
+                      <td>0.3638</td>
+                      <td>0.3672</td>
+                      <td>0.0034</td>
+                    </tr>
+                    <tr>
+                      <td>afrixnli</td>
+                      <td>0.3608</td>
+                      <td>0.3784</td>
+                      <td>0.0176</td>
+                    </tr>
+                    <tr>
+                      <td>Overall_Average</td>
+                      <td>0.3129</td>
+                      <td>0.3162</td>
+                      <td>0.0033</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Adding cultural reasoning yields small but meaningful gains overall. It helps most on understanding relationships between statements (afrixnli, +0.0176), provides a marginal lift in sentiment (afrisenti, +0.0034), and shows a slight tradeoff on extractive QA (afriqa, −0.0111). On average, reasoning improves Qwen‑8B by +0.0033, indicating that lightweight cultural reasoning can nudge models toward better culturally grounded decisions without heavy retraining.</p>
+
+                <h3>Language-Specific Discoveries</h3>
+                <p>Looking at individual African languages revealed fascinating patterns:</p>
+                <img src="images/language_comparisson.png" alt="Language comparison across tasks and models">
+                <p>Languages that showed biggest improvement:</p>
+                <ul>
+                  <li>Yoruba: 23% improvement in sentiment analysis</li>
+                  <li>Ewe: 15% improvement in sentiment analysis</li>
+                  <li>Kinyarwanda: 16% improvement in natural language inference</li>
+                  <li>Igbo: 14% improvement in natural language inference</li>
+                </ul>
+
+                <h3>The Challenges We Faced</h3>
+                <h4>The Evaluation Dilemma</h4>
+                <p>One of our biggest challenges was evaluation. Current benchmarks for African languages are often just translations of English datasets, which don't capture true cultural understanding. When our Hausa model performed slightly worse on these translated tests, was it really getting worse, or was it actually becoming more culturally authentic and diverging from English-centric standards?</p>
+                <p>This points to a critical need in African NLP: we need evaluation metrics rooted in African cultural contexts, not Western frameworks translated into local languages.</p>
+
+                <h4>Resource Constraints</h4>
+                <p>Time Limitations: Due to project constraints, we could only evaluate three tasks and couldn't include larger-scale models like GPT-4.</p>
+                <p>Computational Limits: While our approach is more efficient than training from scratch, fine-tuning still requires significant computational resources that limit accessibility for some researchers.</p>
+
+                <h4>Data Complexity</h4>
+                <p>Culture is incredibly multifaceted. While the World Values Survey provides rich data on social values, it doesn't capture everything—from local idioms and humor to historical narratives and traditional knowledge systems.</p>
+
+
+
+                <h3>Small Step Towards Decolonizing AI</h3>
+
+                <p>This research is part of a larger movement to make AI truly global. Currently, AI development is dominated by a handful of tech companies in the US and China, training models primarily on English and Chinese data. This creates AI systems that reflect only a narrow slice of human experience.</p>
+                <p>Cultural AI for All: Our methodology could extend beyond African languages to any underrepresented culture—from Indigenous American communities to Pacific Islander societies.</p>
+                <p>Redefining AI Success: Instead of measuring AI progress only by performance on English benchmarks, we need metrics that capture cultural authenticity and community relevance.</p>
+
+                <h4>What We Learned for Next Time</h4>
+                <p>Broader Data Sources: Future work should incorporate social media, literature, oral histories, and other cultural artifacts beyond survey data.</p>
+                <p>Better Evaluation: We need to develop culturally-grounded benchmarks that measure authentic cultural understanding rather than translation accuracy.</p>
+                <p>Community Involvement: Real cultural alignment requires deep collaboration with native speakers and cultural experts throughout the development process.</p>
+
+                <blockquote>This research represents a step toward more inclusive AI that celebrates and incorporates the rich diversity of African cultures. As AI continues to reshape our world, ensuring it reflects all of humanity's wisdom isn't just ethical—it's essential for building better, more effective AI systems.</blockquote>
+                
+                <h4>Key Resources</h4>
+                
+                <p>Source Code: <a href="https://github.com/aci-dev/AfricaLLM">AfricaLLM GitHub Repository</a></p>
+                <p>Dataset: <a href="https://huggingface.co/datasets/JamieOgundiran/AfricaLLM">AfricaLLM Dataset</a></p>
+                <p>Finetuned Models: <a href="https://huggingface.co/JamieOgundiran">Models finetuned with AfricaLLM dataset</a></p>
+                <p>World Values Survey: <a href="https://www.worldvaluessurvey.org/wvs.jsp">The foundational cultural dataset spanning 120 societies</a></p>
+                <p>AfroBench: <a href="https://github.com/McGill-NLP/AfroBench?tab=readme-ov-file">State-of-the-art benchmark for African language evaluation</a></p>
+
+
+            <footer class="blog-post-footer">
+                <div class="blog-post-author">
+                    <img src="images/jamieo.png" alt="Jamie Ogundiran" class="author-avatar">
+                    <div class="author-info">
+                        <h3>Jamie Ogundiran</h3>
+                        <p>Technical Staff @ ACI.dev</p>
+                    </div>
+                </div>
+                <div class="blog-post-tags">
+                    <span class="blog-post-tag">AI Agents</span>
+                    <span class="blog-post-tag">Machine Learning</span>
+                    <span class="blog-post-tag">Automation</span>
+                    <span class="blog-post-tag">Future Tech</span>
+                </div>
+            </footer>
+            </article>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>
