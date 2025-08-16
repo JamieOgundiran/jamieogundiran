@@ -176,19 +176,19 @@
     }
   ],
   "blogPosts": [
-    {
-      "id": "building-culturally-aware-ai",
-      "title": "Building Culturally Aware AI: Lessons from African Language Models",
-      "excerpt": "My research journey into developing AI systems that understand and respect cultural nuances, particularly for low-resource African languages.",
-      "content": "Working on culturally aligned Large Language Models for African languages has been one of the most challenging and rewarding aspects of my research. The conventional approach to AI development often overlooks the rich linguistic and cultural diversity that exists beyond Western contexts.\n\nThrough my research, I've discovered that building truly inclusive AI requires more than just translation. It demands a deep understanding of cultural context, social norms, and the unique ways different communities express ideas and emotions.\n\nOne of the key challenges we face is the scarcity of high-quality training data for low-resource languages. This isn't just a technical problem—it's a representation problem. When AI systems are trained predominantly on Western content, they inevitably reflect Western perspectives and biases.\n\nOur approach focuses on developing scalable data collection methods that respect local communities and their intellectual property. We're not just extracting data; we're building partnerships with local linguists, educators, and community leaders.\n\nThe goal isn't to replace existing languages with AI-generated content, but to create tools that help preserve, celebrate, and promote linguistic diversity in our increasingly digital world.",
-      "author": "Jamie Ogundiran",
-      "publishedDate": "2025-08-07",
-      "category": "Research",
-      "tags": ["Cultural AI", "African Languages", "NLP", "Research", "Diversity"],
-      "readTime": "7 min read",
-      "featured": false,
-      "status": "published"
-    }
+    // {
+    //   "id": "building-culturally-aware-ai",
+    //   "title": "Building Culturally Aware AI: Lessons from African Language Models",
+    //   "excerpt": "My research journey into developing AI systems that understand and respect cultural nuances, particularly for low-resource African languages.",
+    //   "content": "Working on culturally aligned Large Language Models for African languages has been one of the most challenging and rewarding aspects of my research. The conventional approach to AI development often overlooks the rich linguistic and cultural diversity that exists beyond Western contexts.\n\nThrough my research, I've discovered that building truly inclusive AI requires more than just translation. It demands a deep understanding of cultural context, social norms, and the unique ways different communities express ideas and emotions.\n\nOne of the key challenges we face is the scarcity of high-quality training data for low-resource languages. This isn't just a technical problem—it's a representation problem. When AI systems are trained predominantly on Western content, they inevitably reflect Western perspectives and biases.\n\nOur approach focuses on developing scalable data collection methods that respect local communities and their intellectual property. We're not just extracting data; we're building partnerships with local linguists, educators, and community leaders.\n\nThe goal isn't to replace existing languages with AI-generated content, but to create tools that help preserve, celebrate, and promote linguistic diversity in our increasingly digital world.",
+    //   "author": "Jamie Ogundiran",
+    //   "publishedDate": "2025-08-07",
+    //   "category": "Research",
+    //   "tags": ["Cultural AI", "African Languages", "NLP", "Research", "Diversity"],
+    //   "readTime": "7 min read",
+    //   "featured": true,
+    //   "status": "published"
+    // }
   ],
   "metadata": {
     "lastUpdated": "2025-08-15",
