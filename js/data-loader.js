@@ -3,6 +3,65 @@ class PortfolioDataLoader {
     this.data = null;
   }
 
+  formatDate(dateString, options = { month: 'long', year: 'numeric' }) {
+    if (!dateString) return '';
+    if (typeof dateString === 'string' && dateString.toLowerCase() === 'present') {
+      return 'Present';
+    }
+
+    const parsedDate = new Date(dateString);
+    if (Number.isNaN(parsedDate.getTime())) {
+      return dateString;
+    }
+
+    return parsedDate.toLocaleDateString('en-US', options);
+  }
+
+  formatDateRange(startDate, endDate) {
+    if (!startDate && !endDate) return '';
+
+    const start = startDate ? this.formatDate(startDate) : '';
+    const end = endDate ? this.formatDate(endDate) : '';
+
+    if (start && end) {
+      return `${start} - ${end}`;
+    }
+
+    return start || end;
+  }
+
+  generateHighlightsList(items = []) {
+    if (!items || !items.length) {
+      return '';
+    }
+
+    const listItems = items
+      .map(item => `<li>${item}</li>`) 
+      .join('');
+
+    return `<ul class="card-list">${listItems}</ul>`;
+  }
+
+  getSortableDate(item) {
+    const candidateFields = ['date', 'endDate', 'startDate'];
+
+    for (const field of candidateFields) {
+      const value = item[field];
+      if (!value) continue;
+
+      if (typeof value === 'string' && value.toLowerCase() === 'present') {
+        return new Date();
+      }
+
+      const parsed = new Date(value);
+      if (!Number.isNaN(parsed.getTime())) {
+        return parsed;
+      }
+    }
+
+    return new Date(0);
+  }
+
   // Load JSON data
   async loadData() {
     try {
@@ -53,18 +112,69 @@ class PortfolioDataLoader {
 
   // Generate achievement card HTML
   generateAchievementCard(achievement) {
+    const hasLink = Boolean(achievement.linkedinUrl);
+    const Tag = hasLink ? 'a' : 'div';
+    const highlights = this.generateHighlightsList(achievement.highlights);
+    const description = achievement.description 
+      ? `<p class="description">${achievement.description}</p>` 
+      : '';
+    const location = achievement.location 
+      ? `<p class="meta">${achievement.location}</p>`
+      : '';
+
+    const arrowSvg = `
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    `;
+
+    const attributes = hasLink 
+      ? `class="experience-card" target="_blank" href="${achievement.linkedinUrl}"`
+      : 'class="experience-card"';
+
     return `
-      <a class="experience-card" target="_blank" href="${achievement.linkedinUrl}">
+      <${Tag} ${attributes}>
         <div class="company">
           ${achievement.title}
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
+          ${hasLink ? arrowSvg : ''}
         </div>
-        <p class="description">${achievement.description}</p>
-        <p class="period">${achievement.period}</p>
-      </a>
+        ${achievement.subtitle ? `<p class="role">${achievement.subtitle}</p>` : ''}
+        ${location}
+        ${description}
+        ${highlights}
+        ${achievement.period ? `<p class="period">${achievement.period}</p>` : ''}
+      </${Tag}>
+    `;
+  }
+
+  generateExperienceCard(experience) {
+    const highlights = this.generateHighlightsList(experience.highlights);
+    const period = this.formatDateRange(experience.startDate, experience.endDate);
+
+    return `
+      <div class="experience-card">
+        <div class="company">${experience.company}</div>
+        <p class="role">${experience.role}</p>
+        ${experience.location ? `<p class="meta">${experience.location}</p>` : ''}
+        ${period ? `<p class="period">${period}</p>` : ''}
+        ${highlights}
+      </div>
+    `;
+  }
+
+  generateEducationCard(education) {
+    const highlights = this.generateHighlightsList(education.highlights);
+    const period = this.formatDateRange(education.startDate, education.endDate);
+
+    return `
+      <div class="experience-card">
+        <div class="company">${education.degree}</div>
+        <p class="role">${education.institution}</p>
+        ${education.location ? `<p class="meta">${education.location}</p>` : ''}
+        ${period ? `<p class="period">${period}</p>` : ''}
+        ${highlights}
+      </div>
     `;
   }
 
@@ -146,12 +256,48 @@ class PortfolioDataLoader {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    let achievements = this.data.recentAchievements.filter(a => a.featured);
+    let achievements = this.data.recentAchievements
+      .filter(a => a.featured)
+      .sort((a, b) => this.getSortableDate(b) - this.getSortableDate(a));
     if (limit) {
       achievements = achievements.slice(0, limit);
     }
 
     container.innerHTML = achievements.map(achievement => this.generateAchievementCard(achievement)).join('');
+  }
+
+  displayExperience(containerId, limit = null) {
+    if (!this.data) return;
+
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    let experiences = this.data.workExperience
+      .filter(exp => exp.featured)
+      .sort((a, b) => this.getSortableDate(b) - this.getSortableDate(a));
+
+    if (limit) {
+      experiences = experiences.slice(0, limit);
+    }
+
+    container.innerHTML = experiences.map(experience => this.generateExperienceCard(experience)).join('');
+  }
+
+  displayEducation(containerId, limit = null) {
+    if (!this.data) return;
+
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    let education = this.data.education
+      .filter(item => item.featured)
+      .sort((a, b) => this.getSortableDate(b) - this.getSortableDate(a));
+
+    if (limit) {
+      education = education.slice(0, limit);
+    }
+
+    container.innerHTML = education.map(item => this.generateEducationCard(item)).join('');
   }
 
   // Display blog posts with optional limit
@@ -175,7 +321,17 @@ class PortfolioDataLoader {
     if (this.data) {
       this.displayProjects('projects-grid', 4);
       this.displayResearch('research-list', 3);
+      this.displayExperience('experience-list', 2);
+      this.displayEducation('education-list');
       this.displayAchievements('achievements-list', 3);
+    }
+  }
+
+  async initExperiencePage() {
+    await this.loadData();
+    if (this.data) {
+      this.displayExperience('experience-list');
+      this.displayEducation('education-list');
     }
   }
 

@@ -995,11 +995,16 @@ MEDIA QUERIES
   border-top: 1px solid var(--color-borders);
   padding-top: 2rem;
   position: relative;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.experience-card:hover {
+a.experience-card {
+  cursor: pointer;
+  display: block;
+  color: inherit;
+}
+
+a.experience-card:hover {
   transform: translateX(10px);
 }
 
@@ -1018,9 +1023,22 @@ MEDIA QUERIES
   transition: all 0.3s ease;
 }
 
-.experience-card:hover .arrow {
+a.experience-card:hover .arrow {
   transform: translate(5px, -5px);
   color: var(--color-orange);
+}
+
+.role {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-secondary-text);
+  margin-bottom: 0.35rem;
+}
+
+.meta {
+  color: var(--color-secondary-text);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
 }
 
 .description {
@@ -1034,6 +1052,18 @@ MEDIA QUERIES
 .period {
   color: var(--color-accent);
   font-size: 0.9rem;
+}
+
+.card-list {
+  margin: 1rem 0 1.5rem 1.25rem;
+  padding: 0;
+  color: var(--color-secondary-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-list li {
+  margin-bottom: 0.5rem;
 }
 
 
