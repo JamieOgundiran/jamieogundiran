@@ -630,13 +630,23 @@ SOCIAL MEDIA STYLES
   transition: transform 0.2s, background-color 0.2s;
 }
 
-.social-icon i {
+.social-icon i,
+.social-icon svg {
   font-size: 20px;
   color: var(--color-accent);
 }
 
-.social-icon:hover i {
+.social-icon svg path {
+  fill: var(--color-accent);
+}
+
+.social-icon:hover i,
+.social-icon:hover svg {
   color: var(--color-primary-text);
+}
+
+.social-icon:hover svg path {
+  fill: var(--color-primary-text);
 }
 
 .social-icon:hover {
