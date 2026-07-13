@@ -18,19 +18,6 @@
 
 @layer base {
   :root,
-  [data-theme="light"] {
-    --color-background: #fbfaf8;
-    --color-foreground: #151524;
-    --color-muted: #4b4b58;
-    --color-border: #d9d6d0;
-    --color-accent: #8e8a99;
-    --color-surface: #ffffff;
-    --color-link: #374f8f;
-    --color-link-hover: #1e3470;
-    --color-code-bg: #f2f0ec;
-    color-scheme: light;
-  }
-
   [data-theme="dark"] {
     --color-background: #121212;
     --color-foreground: #e0e0e0;
@@ -42,6 +29,19 @@
     --color-link-hover: #b8c9ff;
     --color-code-bg: #1e1e1e;
     color-scheme: dark;
+  }
+
+  [data-theme="light"] {
+    --color-background: #fbfaf8;
+    --color-foreground: #151524;
+    --color-muted: #4b4b58;
+    --color-border: #d9d6d0;
+    --color-accent: #8e8a99;
+    --color-surface: #ffffff;
+    --color-link: #374f8f;
+    --color-link-hover: #1e3470;
+    --color-code-bg: #f2f0ec;
+    color-scheme: light;
   }
 
   body {
