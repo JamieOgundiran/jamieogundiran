@@ -15,7 +15,7 @@ export function ResearchCard({ research }: { research: Research }) {
       href={research.githubUrl}
       target="_blank"
       rel="noopener"
-      className="group relative block cursor-pointer border-t border-border pt-8 text-inherit transition-all duration-300 hover:translate-x-[10px]"
+      className="group relative block cursor-pointer pt-8 text-inherit transition-all duration-300 hover:translate-x-[10px]"
     >
       <div className="mb-4 flex items-center justify-between text-[1.75rem] font-semibold">
         {research.title}

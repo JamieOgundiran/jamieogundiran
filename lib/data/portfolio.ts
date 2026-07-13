@@ -2,105 +2,6 @@ import type { PortfolioData } from '@/lib/types';
 import { getSortableDate } from '@/lib/format';
 
 export const portfolio = {
-  personalProjects: [
-    {
-      id: 'pixel-panel',
-      title: 'PixelPanel',
-      description:
-        'End-to-end multimodal AI comic generator with panel creation, sketch refinement, and voice narration.',
-      category: 'ai',
-      image: '/images/pixelpanel.jpg',
-      imageAlt: 'PixelPanel AI comic generator',
-      githubUrl: 'https://www.pixelpanel.co/',
-      technologies: ['Next.js', 'FastAPI', 'Supabase', 'Google Gemini', 'ElevenLabs'],
-      featured: true,
-      dateCreated: '2025-08-01',
-      status: 'ongoing',
-    },
-    {
-      id: 'table42',
-      title: 'Table 42',
-      description:
-        'AI-Powered Customer Service & CRM Platform for Restaurants and Cafes',
-      category: 'ai',
-      image: '/images/table42.jpeg',
-      imageAlt: 'Portfolio Chatbot',
-      githubUrl: 'https://github.com/JReal10/Table42',
-      technologies: ['AI', 'CRM', 'Customer Service', 'Restaurant Tech'],
-      featured: true,
-      dateCreated: '2024-03-01',
-      status: 'completed',
-    },
-    {
-      id: 'sntc',
-      title: 'SNTC',
-      description: 'AI-powered compliance monitoring and supplier intelligence',
-      category: 'ai',
-      image: '/images/sntc.jpeg',
-      imageAlt: 'Say NO TO CORRUPTION',
-      githubUrl: 'https://github.com/JReal10/say_no_to_corruption',
-      technologies: ['AI', 'Compliance', 'Risk Assessment', 'NLP'],
-      featured: true,
-      dateCreated: '2024-04-01',
-      status: 'completed',
-    },
-    {
-      id: 'reddit-radar',
-      title: 'RedditRadar',
-      description:
-        'Reddit stock discussions sentiment analyzer for financial institution',
-      category: 'ai',
-      image: '/images/sentiment.jpg',
-      imageAlt: 'Reddit Stock Sentiment Analyzer',
-      githubUrl: 'https://github.com/JReal10/Reddit-Stock-Sentiment-Analyzer',
-      technologies: ['NLP', 'Sentiment Analysis', 'Finance', 'Reddit API'],
-      featured: true,
-      dateCreated: '2024-02-01',
-      status: 'completed',
-    },
-    {
-      id: 'borough-match',
-      title: 'BoroughMatch London',
-      description:
-        'AI-powered London Borough Recommender for optimizing resident experience and local service access.',
-      category: 'web',
-      image: '/images/house.jpg',
-      imageAlt: 'London Borough Recommender',
-      githubUrl: 'https://github.com/JReal10/London-Area-Recommender-System',
-      technologies: ['AI', 'Recommendation System', 'Location Intelligence', 'Data Analysis'],
-      featured: true,
-      dateCreated: '2024-01-01',
-      status: 'completed',
-    },
-    {
-      id: 'sharon',
-      title: 'Sharon',
-      description:
-        'A mobile application for salon appointment booking, featuring real-time scheduling and salon dashboards',
-      category: 'web',
-      image: '/images/sharon.jpg',
-      imageAlt: 'E-commerce Platform',
-      githubUrl: 'https://github.com/JReal10/Sharon---Salon-booking-app',
-      technologies: ['Mobile App', 'Scheduling', 'Real-time', 'Dashboard'],
-      featured: true,
-      dateCreated: '2023-12-01',
-      status: 'completed',
-    },
-    {
-      id: 'parent-link',
-      title: 'ParentLink',
-      description:
-        'parenting app focusing on partner engagement, community building, and expert-backed guidance for all developmental stages.',
-      category: 'web',
-      image: '/images/parenting.png',
-      imageAlt: 'E-commerce Platform',
-      githubUrl: 'https://www.figma.com/community/file/1322990644569239714',
-      technologies: ['UI/UX Design', 'Parenting', 'Community', 'Mobile Design'],
-      featured: true,
-      dateCreated: '2023-11-01',
-      status: 'completed',
-    },
-  ],
   recentResearch: [
     {
       id: 'africa-llm',
@@ -121,17 +22,18 @@ export const portfolio = {
   workExperience: [
     {
       id: 'aci-dev',
-      company: 'ACI.dev - Opensource AI Infrastructure Startup backed by Project A',
+      company: 'ACI.dev - Opensource AI Infrastructure',
       role: 'Member of Technical Staff',
       location: 'London, UK',
       startDate: '2025-05-01',
-      endDate: '2026-04-01',
+      endDate: '2026-06-01',
       highlights: [
-        'Led development of Eidexa, a personal data lake for AI agents, architecting and deploying the system to support 40+ users and 200+ knowledge entries within one month',
-        'Supervised 4 interns, delivered 10+ code reviews and 12 user interviews to improve feature reliability and adoption',
-        'Presented Eidexa live at MMC Ventures to 100+ engineers and implemented Gate22 developer docs and UI that grew the project to 130+ GitHub stars',
-        'Scaled community engagement with 2 blogs, 10+ demos, 5+ tutorials, and partnerships with 2 open-source projects, growing Discord from 100 to 600 members and LinkedIn from 200 to 700 followers',
-        'Represented ACI.dev at Tahakom in Riyadh, delivering a Model Context Protocol workshop to 100+ AI/ML engineers and researchers',
+        'Led Eidexa end-to-end with Chrome Extension, FastAPI, and Supabase/pgvector, shipping a secure multi-tenant RAG system in **1 month** with **100+ users** and **200+ knowledge entries**',
+        'Supervised **4 interns**, delivered **10+ code reviews**, and conducted **12 user interviews** to improve feature reliability and adoption',
+        'Designed and implemented a **two-stage AI agent eval pipeline** with concurrent output generation, LLM-based grading, and **12 custom graders**',
+        'Implemented Gate22 developer docs and UI, growing the open-source MCP gateway to **130+ GitHub stars**',
+        'Scaled community engagement with **2 technical blogs**, **10+ demos**, **5+ tutorials**, and partnerships with **2 open-source projects**; grew Discord from **100 to 600**, LinkedIn from **200 to 700**, and GitHub from **3.0K to 4.7K stars**',
+        'Represented ACI.dev as an **invited speaker at Tahakom**, delivering a hands-on **Model Context Protocol (MCP)** workshop',
       ],
       featured: true,
     },
@@ -143,8 +45,8 @@ export const portfolio = {
       startDate: '2024-07-01',
       endDate: '2024-11-01',
       highlights: [
-        'Delivered engaging coding lessons to students aged 10-15 across 100+ teaching hours, achieving 97% overall satisfaction',
-        'Collaborated with 2 fellow tutors to teach foundational cybersecurity and Python concepts to 20+ students',
+        'Delivered coding lessons to students aged **10-15** across **100+ teaching hours**, achieving **97% overall student satisfaction**',
+        'Collaborated with **2 fellow tutors** to teach cybersecurity and Python foundations to **20+ students**',
       ],
       featured: true,
     },
@@ -182,12 +84,11 @@ export const portfolio = {
       date: '2025-08-01',
       period: 'August 2025',
       linkedinUrl: 'https://showcase.elevenlabs.io/projects/p/pixel-panel',
-      projectRelated: null,
       rank: 1,
       totalParticipants: 140,
       technologies: ['AI Agents', 'Generative AI', 'Creative AI'],
       highlights: [
-        'Led a team of three to 1st place among 140+ builders, securing the £10K grand prize',
+        'Led a **team of 3** to **1st place** among **140+ builders**, securing the **£10K grand prize**',
         'Built PixelPanel, an AI-powered comic generator featured in the ElevenLabs showcase',
       ],
       featured: true,
@@ -200,13 +101,12 @@ export const portfolio = {
       date: '2025-03-01',
       period: 'May 2025 - October 2025',
       linkedinUrl: 'https://techeurope.io/hackathons/paris-ai-hackathon-2025',
-      projectRelated: null,
       rank: null,
       totalParticipants: 1000,
       technologies: ['AI Ecosystems', 'Community Building'],
       highlights: [
-        "Represented Tech Europe, one of Europe's largest AI builder networks, as judge, speaker, and panelist across nine hackathons",
-        'Helped unite 1,000+ builders across London, Berlin, Paris, and Stockholm through live mentorship and evaluation',
+        "Represented Tech Europe, one of Europe's largest AI builder networks, as **judge, speaker, and panelist** across **9 hackathons**",
+        'Helped unite **1,000+ builders** across London, Berlin, Paris, and Stockholm through live mentorship and evaluation',
       ],
       featured: true,
     },
@@ -218,14 +118,13 @@ export const portfolio = {
       date: '2025-10-01',
       period: 'October 2025',
       linkedinUrl: 'https://luma.com/8vxfeo4a?tk=lKPK7l',
-      projectRelated: null,
       rank: null,
       totalParticipants: 100,
       technologies: ['AI Agents', 'Mentorship', 'Innovation'],
       highlights: [
-        "Supported AI Engine's pan-European program spanning 10+ major tech hubs and 1,000+ builders annually",
-        'Evaluated 100+ builders, guiding finalist teams on innovation, technical execution, and agent architecture',
-        'Featured on Viraj Acharya\'s "Ventures Series" (138K+ views; 100+ live viewers) to discuss AI builder ecosystems',
+        "Supported AI Engine's pan-European program spanning **10+ major tech hubs** and **1,000+ builders annually**",
+        'Evaluated **100+ builders**, guiding finalist teams on innovation, technical execution, and AI agent architecture',
+        'Featured on Viraj Acharya\'s "Ventures Series" with **138K+ total views** and **100+ live viewers**',
       ],
       featured: true,
     },
@@ -239,7 +138,6 @@ export const portfolio = {
       period: 'August 2025',
       linkedinUrl:
         'https://www.linkedin.com/posts/jamie-ogundiran-874aa3230_%F0%9D%97%AA%F0%9D%97%B5%F0%9D%97%AE%F0%9D%98%81-%F0%9D%97%AE-%F0%9D%97%B1%F0%9D%97%AE%F0%9D%98%86-%F0%9D%97%B6%F0%9D%97%BB-%F0%9D%97%A5%F0%9D%97%B6%F0%9D%98%86%F0%9D%97%AE%F0%9D%97%B1%F0%9D%97%B5-im-activity-7357101257544593409-dxD1',
-      projectRelated: null,
       rank: null,
       totalParticipants: null,
       technologies: ['Model Context Protocol', 'MCP', 'AI Security', 'Prompt Injection', 'Context Expansion'],
@@ -252,13 +150,12 @@ export const portfolio = {
       id: 'sf-tech-week-speaker',
       title: 'Speaker – HackNight @ GitHub HQ',
       description:
-        "Presented ACI.dev's new technology to 100+ developers at GitHub HQ in San Francisco, driving 30+ Discord joins and 20+ new user signups while showcasing the future of tool-calling for AI agents.",
+        "Presented ACI.dev's new technology to **100+ developers** at GitHub HQ in San Francisco, driving **30+ Discord joins** and **20+ new user signups** while showcasing the future of tool-calling for AI agents.",
       category: 'conference',
       date: '2025-07-01',
       period: 'July 2025',
       linkedinUrl:
         'https://www.linkedin.com/posts/jamie-ogundiran-874aa3230_recently-i-spent-a-week-immersed-in-the-san-activity-7353121750525583360-2bpV',
-      projectRelated: null,
       rank: null,
       totalParticipants: null,
       technologies: ['AI Agents', 'Tool-calling', 'ACI.dev', 'AI Workflows'],
@@ -273,12 +170,11 @@ export const portfolio = {
       id: 'ai-agent-hackathon',
       title: "2nd Place – Europe's Largest AI Agent Hackathon",
       description:
-        'Built Table 42, an AI-powered restaurant concierge that converts social media engagement into real bookings by integrating with social platforms and personalizing the discovery-to-reservation journey.',
+        'Built Table 42, an AI-powered restaurant concierge that converted social media engagement into real bookings; won **2nd place** at Europe\'s largest AI agent hackathon.',
       category: 'hackathon',
       date: '2025-04-01',
       period: 'March 2025 - April 2025',
       linkedinUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7324704340596715520/',
-      projectRelated: 'table42',
       rank: 2,
       totalParticipants: null,
       technologies: ['AI', 'Social Media Integration', 'Restaurant Tech'],
@@ -293,7 +189,6 @@ export const portfolio = {
       date: '2025-04-01',
       period: 'April 2025',
       linkedinUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7317505996032020484/',
-      projectRelated: 'sntc',
       rank: 3,
       totalParticipants: null,
       technologies: ['AI', 'Risk Assessment', 'Compliance', 'NLP'],
@@ -303,12 +198,11 @@ export const portfolio = {
       id: 'hacklbs-winner',
       title: 'Winner – HackLBS 2025, London Business School',
       description:
-        'Created Gastronaut, a conversational AI audio bot with automated table management to address manual reservation inefficiencies in Southeast Asian restaurants. The solution modernizes bookings, reduces human error, and enhances customer experience.',
+        'Built Gastronaut, a conversational agent for restaurant bookings; won **1st place** among **21 teams** and **100+ MBA candidates**.',
       category: 'hackathon',
       date: '2025-03-01',
       period: 'March 2025',
       linkedinUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7302631978154033152/',
-      projectRelated: null,
       rank: 1,
       totalParticipants: null,
       technologies: ['Conversational AI', 'Audio Processing', 'Restaurant Tech', 'Automation'],
@@ -327,10 +221,6 @@ function sortByDateDesc<T extends { date?: string; endDate?: string; startDate?:
 
 function limitTo<T>(items: T[], limit?: number): T[] {
   return limit ? items.slice(0, limit) : items;
-}
-
-export function getFeaturedProjects(limit?: number) {
-  return limitTo(portfolio.personalProjects.filter((p) => p.featured), limit);
 }
 
 export function getFeaturedResearch(limit?: number) {

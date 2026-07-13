@@ -13,8 +13,8 @@ interface ProfileCardProps {
 
 export function ProfileCard({
   name = 'Jamie Ogundiran',
-  title = 'Founder @ Stealth',
-  imgSrc = '/images/jamieo.jpg',
+  title = 'Award-Winning AI Builder',
+  imgSrc = '/images/jamie_profile.jpeg',
   linkedin = 'https://www.linkedin.com/in/jamie-ogundiran-874aa3230/',
   github = 'https://github.com/JamieOgundiran',
   twitter = 'https://x.com/JamieOgundiran',

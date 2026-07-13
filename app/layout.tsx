@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
-import { AnimatedBackground } from '@/components/layout/AnimatedBackground';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: '%s · Jamie Ogundiran',
   },
   description:
-    'Jamie Ogundiran — Founder @ Stealth. Building the business context layer for AI agents. 4x hackathon winner, judge, speaker, and panelist at AI events across Europe.',
+    "Jamie Ogundiran — Award-winning AI builder and four-time hackathon winner, building culturally aware AI systems and agent infrastructure.",
 };
 
 export default function RootLayout({
@@ -27,9 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
-        <AnimatedBackground />
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(function(){try{var stored=localStorage.getItem('theme');var theme=stored==='light'||stored==='dark'?stored:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;}catch(error){document.documentElement.dataset.theme='light';document.documentElement.style.colorScheme='light';}})();`}
+        </Script>
         <Nav />
         <MotionProvider>{children}</MotionProvider>
         <Footer />

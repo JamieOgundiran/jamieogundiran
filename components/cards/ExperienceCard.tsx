@@ -6,7 +6,7 @@ export function ExperienceCard({ experience }: { experience: WorkExperience }) {
   const period = formatDateRange(experience.startDate, experience.endDate);
 
   return (
-    <div className="relative border-t border-border pt-8 transition-all duration-300">
+    <div className="relative pt-8 transition-all duration-300">
       <div className="mb-4 flex items-center justify-between text-[1.75rem] font-semibold">
         {experience.company}
       </div>

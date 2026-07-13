@@ -1,5 +1,6 @@
 import type { Achievement } from '@/lib/types';
 import { CardArrow } from '@/components/ui/CardArrow';
+import { FormattedText } from '@/components/ui/FormattedText';
 import { HighlightsList } from './HighlightsList';
 
 export function AchievementCard({ achievement }: { achievement: Achievement }) {
@@ -19,7 +20,7 @@ export function AchievementCard({ achievement }: { achievement: Achievement }) {
       )}
       {achievement.description && (
         <p className="mb-4 max-w-[80%] text-[1.1rem] leading-relaxed text-muted">
-          {achievement.description}
+          <FormattedText text={achievement.description} />
         </p>
       )}
       <HighlightsList items={achievement.highlights} />
@@ -35,7 +36,7 @@ export function AchievementCard({ achievement }: { achievement: Achievement }) {
         href={achievement.linkedinUrl}
         target="_blank"
         rel="noopener"
-        className="group relative block cursor-pointer border-t border-border pt-8 text-inherit transition-all duration-300 hover:translate-x-[10px]"
+        className="group relative block cursor-pointer pt-8 text-inherit transition-all duration-300 hover:translate-x-[10px]"
       >
         {body}
       </a>
@@ -43,7 +44,7 @@ export function AchievementCard({ achievement }: { achievement: Achievement }) {
   }
 
   return (
-    <div className="relative border-t border-border pt-8 transition-all duration-300">
+    <div className="relative pt-8 transition-all duration-300">
       {body}
     </div>
   );

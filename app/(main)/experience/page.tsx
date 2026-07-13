@@ -25,7 +25,7 @@ export default function ExperiencePage() {
 
       <Reveal>
         <section className="mb-[100px]">
-          <SectionHeading highlight="MY" rest="EDUCATION" />
+          <SectionHeading highlight="EDUCATION" rest="" />
           <div className="flex flex-col gap-8">
             {getFeaturedEducation().map((education) => (
               <EducationCard key={education.id} education={education} />

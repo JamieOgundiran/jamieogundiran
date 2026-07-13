@@ -1,17 +1,3 @@
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  category: 'ai' | 'web';
-  image: string;
-  imageAlt: string;
-  githubUrl: string;
-  technologies: string[];
-  featured: boolean;
-  dateCreated: string;
-  status: 'ongoing' | 'completed';
-}
-
 export interface Research {
   id: string;
   title: string;
@@ -58,7 +44,6 @@ export interface Achievement {
   date: string;
   period?: string;
   linkedinUrl?: string;
-  projectRelated?: string | null;
   rank?: number | null;
   totalParticipants?: number | null;
   technologies?: string[];
@@ -72,21 +57,8 @@ export interface Achievement {
 }
 
 export interface PortfolioData {
-  personalProjects: Project[];
   recentResearch: Research[];
   workExperience: WorkExperience[];
   education: Education[];
   recentAchievements: Achievement[];
-}
-
-export interface PostMeta {
-  title: string;
-  excerpt: string;
-  author: string;
-  authorTitle?: string;
-  publishedDate: string;
-  category: string;
-  tags: string[];
-  readTime: string;
-  image: string;
 }
