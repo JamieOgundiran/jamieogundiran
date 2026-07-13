@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
         <Script id="theme-init" strategy="beforeInteractive">
-          {`(function(){try{var stored=localStorage.getItem('theme');var theme=stored==='light'||stored==='dark'?stored:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;}catch(error){document.documentElement.dataset.theme='light';document.documentElement.style.colorScheme='light';}})();`}
+          {`(function(){try{var stored=localStorage.getItem('theme');var theme=stored==='light'||stored==='dark'?stored:'dark';document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;}catch(error){document.documentElement.dataset.theme='dark';document.documentElement.style.colorScheme='dark';}})();`}
         </Script>
         <Nav />
         <MotionProvider>{children}</MotionProvider>
