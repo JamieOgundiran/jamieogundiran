@@ -24,11 +24,12 @@ export function ThemeToggle() {
       aria-label="Toggle color mode"
       title="Toggle color mode"
       onClick={toggleTheme}
-      className="theme-toggle-switch"
+      className="text-accent transition-colors hover:text-foreground"
     >
-      <FiSun className="theme-toggle-icon theme-toggle-icon-light" aria-hidden="true" />
-      <FiMoon className="theme-toggle-icon theme-toggle-icon-dark" aria-hidden="true" />
-      <span className="theme-toggle-knob" aria-hidden="true" />
+      {/* Both icons render on the server; the active theme attribute decides
+          which one is visible, so there is nothing to hydrate. */}
+      <FiMoon className="h-4 w-4 dark:hidden" aria-hidden="true" />
+      <FiSun className="hidden h-4 w-4 dark:block" aria-hidden="true" />
     </button>
   );
 }

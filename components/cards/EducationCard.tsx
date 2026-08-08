@@ -1,23 +1,36 @@
+import Image from 'next/image';
 import type { Education } from '@/lib/types';
 import { formatDateRange } from '@/lib/format';
+import { EntryHeader } from './EntryHeader';
 import { HighlightsList } from './HighlightsList';
 
 export function EducationCard({ education }: { education: Education }) {
   const period = formatDateRange(education.startDate, education.endDate);
+  const subtitle = [education.institution, education.location]
+    .filter(Boolean)
+    .join(' · ');
 
   return (
-    <div className="relative pt-8 transition-all duration-300">
-      <div className="mb-4 flex items-center justify-between text-[1.75rem] font-semibold">
-        {education.degree}
-      </div>
-      <p className="mb-[0.35rem] text-[1.1rem] font-medium text-muted">
-        {education.institution}
-      </p>
-      {education.location && (
-        <p className="mb-3 text-[0.95rem] text-muted">{education.location}</p>
-      )}
-      {period && <p className="text-[0.9rem] text-accent">{period}</p>}
+    <article>
+      <EntryHeader
+        title={
+          <span className="inline-flex items-center gap-2.5">
+            {education.logo && (
+              <Image
+                src={education.logo}
+                alt=""
+                width={30}
+                height={30}
+                className="h-[30px] w-[30px] shrink-0 object-contain"
+              />
+            )}
+            {education.degree}
+          </span>
+        }
+        meta={period}
+      />
+      {subtitle && <p className="mt-4 text-[0.95rem] text-muted">{subtitle}</p>}
       <HighlightsList items={education.highlights} />
-    </div>
+    </article>
   );
 }

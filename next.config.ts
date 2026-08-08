@@ -1,5 +1,15 @@
 import type { NextConfig } from 'next';
+import createMDX from '@next/mdx';
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  pageExtensions: ['ts', 'tsx', 'mdx'],
+};
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    // String form keeps the config serializable for Turbopack.
+    remarkPlugins: [['remark-gfm']],
+  },
+});
+
+export default withMDX(nextConfig);

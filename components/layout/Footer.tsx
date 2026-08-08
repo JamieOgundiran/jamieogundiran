@@ -1,31 +1,46 @@
+import Link from 'next/link';
+import { footerLinks, site, socialLinks } from '@/lib/data/site';
+
+const linkClass = 'text-[0.95rem] text-muted transition-colors hover:text-foreground';
+
 export function Footer() {
   return (
-    <footer className="bg-background p-8 text-center text-[0.9rem] text-muted">
-      <div className="mb-4">
-        <a
-          href="https://github.com/JamieOgundiran"
-          target="_blank"
-          rel="noopener"
-          className="mx-2 text-[1.2rem] text-accent hover:text-foreground"
-        >
-          Github
-        </a>
-        <a
-          href="https://www.linkedin.com/in/jamie-ogundiran-874aa3230/"
-          target="_blank"
-          rel="noopener"
-          className="mx-2 text-[1.2rem] text-accent hover:text-foreground"
-        >
-          Linkedin
-        </a>
-        <a
-          href="mailto:jamieogundiran@gmail.com"
-          className="mx-2 text-[1.2rem] text-accent hover:text-foreground"
-        >
-          jamieogundiran@gmail.com
-        </a>
+    <footer className="page-shell">
+      <div className="flex justify-between gap-12 border-t border-border pb-10 pt-12 max-sm:flex-col max-sm:gap-10">
+        <span className="font-heading text-[1.15rem] font-bold tracking-tight">{site.name}</span>
+
+        <div className="flex gap-20 max-sm:gap-12">
+          <ul className="flex flex-col gap-3">
+            {footerLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link href={href} className={linkClass}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <ul className="flex flex-col gap-3">
+            {socialLinks.map(({ href, label }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  {...(href.startsWith('mailto:')
+                    ? {}
+                    : { target: '_blank', rel: 'noopener' })}
+                  className={linkClass}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <p>&copy; {new Date().getFullYear()} Jamie Ogundiran. All rights reserved.</p>
+
+      <p className="pb-12 text-[0.85rem] text-accent">
+        &copy; {new Date().getFullYear()} {site.name}
+      </p>
     </footer>
   );
 }

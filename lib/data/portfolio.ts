@@ -2,27 +2,50 @@ import type { PortfolioData } from '@/lib/types';
 import { getSortableDate } from '@/lib/format';
 
 export const portfolio = {
-  recentResearch: [
+  /**
+   * Recovered from data/portfolio-data.json (commit f3da002) plus the work
+   * highlights below. Descriptions and links are as originally written.
+   */
+  projects: [
     {
-      id: 'africa-llm',
-      title: 'Low-Resource African Languages and Cultures',
+      id: 'eidexa',
+      name: 'Eidexa',
+      category: 'Retrieval',
+      url: 'https://eidexa.ai',
+      image: '/images/eidexa.png',
+      description: 'A secure multi-tenant RAG system built end-to-end.',
+      technologies: ['Chrome Extension', 'FastAPI', 'Supabase', 'pgvector', 'RAG'],
+      featured: true,
+    },
+    {
+      id: 'pixel-panel',
+      name: 'PixelPanel',
+      category: 'Multimodal AI',
+      url: 'https://www.pixelpanel.co/',
+      image: '/images/pixelpanel.png',
       description:
-        'This research focuses on improving culturally aligned Large Language Models (LLMs) for low-resource African languages. The goal is to develop scalable data collection methods and create benchmarks for better model evaluation.',
-      category: 'nlp',
-      githubUrl: 'https://github.com/JReal10/AfricaLLM',
-      startDate: '2024-01-01',
-      endDate: '2025-09-01',
-      status: 'completed',
-      technologies: ['LLM', 'NLP', 'African Languages', 'Cultural AI', 'Benchmarking'],
-      collaborators: [],
-      publications: [],
+        'End-to-end multimodal AI comic generator with panel creation, sketch refinement, and voice narration.',
+      technologies: ['Next.js', 'FastAPI', 'Supabase', 'Google Gemini', 'ElevenLabs'],
+      featured: true,
+    },
+    {
+      id: 'table42',
+      name: 'Table 42',
+      category: 'Applied AI',
+      url: 'https://github.com/JReal10/Table42',
+      image: '/images/table42.jpeg',
+      description:
+        'AI-powered customer service and CRM platform for restaurants and cafes.',
+      technologies: ['AI', 'CRM', 'Customer Service', 'Restaurant Tech'],
       featured: true,
     },
   ],
   workExperience: [
     {
       id: 'aci-dev',
-      company: 'ACI.dev - Opensource AI Infrastructure',
+      company: 'ACI.dev',
+      url: 'https://aci.dev',
+      logo: '/images/aci-logo.png',
       role: 'Member of Technical Staff',
       location: 'London, UK',
       startDate: '2025-05-01',
@@ -37,23 +60,11 @@ export const portfolio = {
       ],
       featured: true,
     },
-    {
-      id: 'funtech',
-      company: 'Funtech - Coding and Tech Camp',
-      role: 'Programming Tutor',
-      location: 'London, UK',
-      startDate: '2024-07-01',
-      endDate: '2024-11-01',
-      highlights: [
-        'Delivered coding lessons to students aged **10-15** across **100+ teaching hours**, achieving **97% overall student satisfaction**',
-        'Collaborated with **2 fellow tutors** to teach cybersecurity and Python foundations to **20+ students**',
-      ],
-      featured: true,
-    },
   ],
   education: [
     {
       id: 'kcl-msc-ai',
+      logo: '/images/kcl.png',
       degree: 'Master of Science (Thesis) - Artificial Intelligence',
       institution: "King's College London",
       location: 'London, UK',
@@ -66,6 +77,7 @@ export const portfolio = {
     },
     {
       id: 'essex-bsc-cs',
+      logo: '/images/essex.png',
       degree: 'Bachelor of Science - Computer Science',
       institution: 'University of Essex',
       location: 'Colchester, UK',
@@ -223,8 +235,9 @@ function limitTo<T>(items: T[], limit?: number): T[] {
   return limit ? items.slice(0, limit) : items;
 }
 
-export function getFeaturedResearch(limit?: number) {
-  return limitTo(portfolio.recentResearch.filter((r) => r.featured), limit);
+// Projects carry no dates, so declaration order is the intended order.
+export function getFeaturedProjects(limit?: number) {
+  return limitTo(portfolio.projects.filter((p) => p.featured), limit);
 }
 
 export function getFeaturedExperience(limit?: number) {
@@ -241,9 +254,31 @@ export function getFeaturedEducation(limit?: number) {
   );
 }
 
-export function getFeaturedAchievements(limit?: number) {
+/**
+ * Awards are the competition placements; everything else is a speaking,
+ * judging or mentoring appearance. Speaking is defined as the complement of
+ * awards so a new category can never fall out of both lists.
+ */
+const AWARD_CATEGORY = 'hackathon';
+
+export function getAwards(limit?: number) {
   return limitTo(
-    sortByDateDesc(portfolio.recentAchievements.filter((a) => a.featured)),
+    sortByDateDesc(
+      portfolio.recentAchievements.filter(
+        (a) => a.featured && a.category === AWARD_CATEGORY
+      )
+    ),
+    limit
+  );
+}
+
+export function getSpeaking(limit?: number) {
+  return limitTo(
+    sortByDateDesc(
+      portfolio.recentAchievements.filter(
+        (a) => a.featured && a.category !== AWARD_CATEGORY
+      )
+    ),
     limit
   );
 }

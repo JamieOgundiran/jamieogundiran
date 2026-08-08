@@ -22,9 +22,25 @@ export function formatDateRange(startDate?: string, endDate?: string): string {
   const end = endDate ? formatDate(endDate) : '';
 
   if (start && end) {
-    return `${start} - ${end}`;
+    return `${start} – ${end}`;
   }
 
+  return start || end;
+}
+
+/** Years only — for the compact timeline, where months are noise. */
+export function formatYearRange(startDate?: string, endDate?: string): string {
+  const year = (value?: string) => {
+    if (!value) return '';
+    if (value.toLowerCase() === 'present') return 'Present';
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime()) ? value : String(parsed.getFullYear());
+  };
+
+  const start = year(startDate);
+  const end = year(endDate);
+
+  if (start && end) return start === end ? start : `${start} – ${end}`;
   return start || end;
 }
 

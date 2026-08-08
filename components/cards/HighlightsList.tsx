@@ -4,9 +4,9 @@ export function HighlightsList({ items }: { items?: string[] }) {
   if (!items || items.length === 0) return null;
 
   return (
-    <ul className="mb-6 ml-5 mt-4 list-disc text-base leading-relaxed text-muted">
+    <ul className="mt-5 flex list-disc flex-col gap-2 pl-5 text-[0.95rem] text-muted marker:text-border">
       {items.map((item) => (
-        <li key={item} className="mb-2">
+        <li key={item}>
           <FormattedText text={item} />
         </li>
       ))}

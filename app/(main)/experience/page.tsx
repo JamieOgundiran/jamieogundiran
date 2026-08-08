@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getFeaturedExperience, getFeaturedEducation } from '@/lib/data/portfolio';
 import { Reveal } from '@/components/motion/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { EntryList } from '@/components/cards/EntryList';
 import { ExperienceCard } from '@/components/cards/ExperienceCard';
 import { EducationCard } from '@/components/cards/EducationCard';
 
@@ -13,24 +14,22 @@ export default function ExperiencePage() {
   return (
     <>
       <Reveal>
-        <section className="mb-[100px]">
-          <SectionHeading highlight="WORK" rest="EXPERIENCE" />
-          <div className="flex flex-col gap-8">
-            {getFeaturedExperience().map((experience) => (
-              <ExperienceCard key={experience.id} experience={experience} />
-            ))}
-          </div>
-        </section>
+        <h1 className="mb-16">Experience</h1>
+        <EntryList>
+          {getFeaturedExperience().map((experience) => (
+            <ExperienceCard key={experience.id} experience={experience} />
+          ))}
+        </EntryList>
       </Reveal>
 
       <Reveal>
-        <section className="mb-[100px]">
-          <SectionHeading highlight="EDUCATION" rest="" />
-          <div className="flex flex-col gap-8">
+        <section className="mt-28">
+          <SectionHeading title="Education" />
+          <EntryList>
             {getFeaturedEducation().map((education) => (
               <EducationCard key={education.id} education={education} />
             ))}
-          </div>
+          </EntryList>
         </section>
       </Reveal>
     </>
