@@ -30,7 +30,7 @@ export const footerLinks = [
 
 export const socialLinks = [
   { href: 'https://www.linkedin.com/in/jamie-ogundiran-874aa3230/', label: 'LinkedIn' },
-  { href: 'https://github.com/JamieOgundiran', label: 'GitHub' },
+  { href: 'https://github.com/JamieOgun', label: 'GitHub' },
   { href: 'https://x.com/JamieOgundiran', label: 'Twitter' },
   { href: `mailto:${site.email}`, label: 'Email' },
 ];
