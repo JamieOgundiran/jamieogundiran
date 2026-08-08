@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import type { PostMeta } from '@/lib/types';
 import { getPostSlugs } from '@/lib/data/posts';
@@ -31,7 +32,8 @@ export default async function BlogPostPage({ params }: PostParams) {
   };
 
   return (
-    <article className="max-w-[46rem]">
+    // mx-auto centres the reading column inside the wider page shell.
+    <article className="mx-auto max-w-[46rem]">
       <Link href="/blog" className="eyebrow text-accent hover:text-foreground">
         &larr; Blog
       </Link>
@@ -43,6 +45,19 @@ export default async function BlogPostPage({ params }: PostParams) {
           .filter(Boolean)
           .join(' · ')}
       </p>
+
+      {meta.image && (
+        <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-lg border border-border">
+          <Image
+            src={meta.image}
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 736px"
+            className="object-cover"
+          />
+        </div>
+      )}
 
       <div className="mt-12">
         <Post />
